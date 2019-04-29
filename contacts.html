@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacts</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="contacts.css" />
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Contacts</a>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="col-md-6">
+
+        <div id="content-area">
+
+            <nav aria-label="Page navigation">
+                <a href="#" class="btn btn-success" id="add-contact-btn">Add</a>
+            </nav>
+
+            <div id="contacts-list">
+                <div data-bind="foreach: contacts">
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><a href="#" data-bind="text: first_name last_name"></a></h3>
+                        </div>
+                        <div class="panel-body">
+                            <p data-bind="text: email"></p>
+                            <a id="btn-delete" href="#" class="btn btn-danger pull-right">Delete</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="col-md-6">
+        <h1>Knockout JS Single Page App</h1>
+
+        <h2>Background</h2>
+        <p>This is a simple front end application connecting to a REST API built using Django Rest Framwork and using Token Authentication.</p>
+
+        <p>The client application is a single HTML page with Bootstrap and Knockout JS. Communication with the Backend API is via Ajax calls.</p>
+
+        <p>After logging in to the site an authentication token is stored in local storage and used for subsequent requests to the API.</p>
+
+        <h2>API</h2>
+        The backend or the app is a simple <a href="https://com-devjoy-contactsapi.herokuapp.com/">contacts Rest API</a> built using Django Rest Framework.
+
+        <h2>Frontend</h2>
+        The front end for the app uses Bootstrap, and Knockout JS.
+    </div>
+
+
+</div>
+<!-- /.container -->
+
+
+<!-- Bootstrap Core JavaScript -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap.native@2.0.15/dist/bootstrap-native.min.js"></script>
+<script src="contacts.js"></script>
+
+</body>
+</html>
